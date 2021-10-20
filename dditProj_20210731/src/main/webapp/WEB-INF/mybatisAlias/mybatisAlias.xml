@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- configuration, cofig.dtd로 변경 -->
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 자주 사용하는 타입의 별칭 -->
+	<typeAliases>
+		<typeAlias type="kr.or.ddit.item.vo.Item" alias="itemVo"/>
+		<typeAlias type="kr.or.ddit.item.vo.MemberVO2" alias="MemberVO"/>
+	</typeAliases>
+</configuration>

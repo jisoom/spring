@@ -1,0 +1,49 @@
+@charset "UTF-8";
+.ui-accordion {
+  width: 100%;
+}
+.ui-accordion > .aco-item {
+}
+.ui-accordion > .aco-item:nth-of-type(1) .aco-tit {
+  border-top:1px solid #ddd;
+}
+.ui-accordion > .aco-item .aco-tit {
+  display: block;
+  padding-left: 50px;
+  height: 45px;
+  border-bottom: 1px solid #ddd;
+  font-size: 20px;
+  position: relative;
+  line-height: 45px;
+  cursor:pointer;
+}
+.ui-accordion > .aco-item .aco-tit::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: 20px;
+  top: 50%;
+  transform: translatey(-50%);
+  background-image: url(https://i.ibb.co/qsgFJT1/more-plus-ico.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+.ui-accordion > .aco-item.active .aco-tit::after {
+  background-position: -16px 0;
+}
+.ui-accordion > .aco-item .aco-tit .qna-num {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translatey(-50%);
+  color: red;
+  font-size: 28px;
+}
+.ui-accordion > .aco-item .qna-txtBox {
+  background-color: #f9f9f9;
+  padding: 30px;
+  display:none;
+  border-bottom: 1px solid #ddd;
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace : .xml 파일은 여러개 생성되므로 이를 구별하는 용도임 -->
+<mapper namespace="item">
+	<!-- itemVo : mybatisAlias.xml에서 설정한 alias임 -->
+	<insert id="insert" parameterType="itemVo">
+	<!-- order : insert를 실행하기 전(before)
+		 keyProperty : Item VO의 itemId 필드로 결과값을 넣어줌
+		 resultType : select 결과의 자료형을 명시해줌  -->
+	<selectKey order="BEFORE" keyProperty="itemId" resultType="int">
+		SELECT NVL(MAX(ITEM_ID),0)+1 FROM ITEM
+	</selectKey>
+	<![CDATA[
+		INSERT INTO ITEM(ITEM_ID, ITEM_NAME, PRICE, DESCRIPTION)
+		VALUES(
+		    #{itemId}, #{itemName}, #{price}, #{description}
+		)
+	]]>
+	</insert>
+	<!-- 다중 이미지 저장할 때는 ITEM 테이블에 pictureUrl 넣을 필요 없어서 위 insert에서 없애줌
+		  단일 이미지 저장할 때는 pictureUrl 넣어줘야됨 -->
+	<!-- 다중 이미지 정보 저장 -->
+	<insert id="insertAtch" parameterType="hashMap">
+	<![CDATA[
+		INSERT INTO ITEM_ATCH(SEQ, PICTURE_URL, PICTURE_SIZE, ITEM_ID)
+		VALUES(
+		    (SELECT NVL(MAX(SEQ),0) + 1 FROM ITEM_ATCH),
+		     #{pictureUrl}, #{pictureSize}, #{itemId}
+		)
+	]]>
+	</insert>
+	
+	
+</mapper>

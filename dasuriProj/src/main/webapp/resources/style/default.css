@@ -1,0 +1,77 @@
+@charset "UTF-8";
+body {
+	margin: 0px;
+	font-size: 16px;
+}
+#box {
+	position: relative;
+	height: auto;
+	width: 100%;
+	margin: auto;
+}
+#top {
+	height: 300px;
+	position: relative;
+	padding: 20px 20px 10px 20px;
+	margin: 0 auto;
+}
+.container1 {
+	overflow: auto;
+}
+/* 스크롤바 자체 */
+.container1::-webkit-scrollbar {
+	width: 10px;
+}
+/* thumb : 움직이는 스크롤바 */
+.container1::-webkit-scrollbar-thumb {
+	background-color: #2f3542;
+	border-radius: 10px;
+	background-clip: padding-box;
+	border: 2px solid transparent;
+}
+/* track : 움직이는 스크롤바 이외의 영역 */
+.container1::-webkit-scrollbar-track {
+	background-color: grey;
+	border-radius: 10px;
+	box-shadow: inset 0px 0px 5px white;
+}
+#left {
+	height: 350px;
+	width: 45%;
+	position: relative;
+	padding: 20px 20px 10px 20px;
+}
+#right {
+	height: 350px;
+	width: 48%;
+	position: relative;
+	padding: 20px 20px 10px 20px;
+}
+#bottom {
+	height: 100px;
+	/* width: 100%; */
+	position: relative;
+	padding: 10px 10px 0px 20px;
+	clear: both; /* 상단의 흐름을 한번 끊어줌 */
+}
+input[type="text"],
+input[type="password"] {
+	padding: 3px;
+	-webkit-border-radius : 5px;
+	-moz-border-radius : 5px;
+	border-radius: 5px;
+	border: 1px solid lightgrey;
+	outline: none;
+	width: calc(100% - 10px);
+	height: 30px; 
+}
+table th {
+	text-align: center;	
+	background-color: #F5DDAD;
+}
+table tr {
+	height: 40px;
+}
+table td {
+	text-align: center;
+}

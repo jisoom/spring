@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+	
+	<!-- MemberVO2를 Alias로 처리 => root-context.xml의 sqlSessionFactory를 찾기
+		mybatisAlias.xml에 Alias가 정의 되어 있음 (우리가 추가한 config 파일) -->
+	<select id="select" parameterType="MemberVO" resultType="MemberVO">
+		SELECT MEMBERID,PASSWORD, NAME,EMAIL
+		FROM MEMBER
+		WHERE MEMBERID = #{memberid}
+	</select>
+</mapper>  
+  

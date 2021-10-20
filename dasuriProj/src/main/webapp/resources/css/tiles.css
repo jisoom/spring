@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+* {
+	font-size: 17px;
+}
+
+#header, .container, #footer {
+	width: 100%;
+	margin: 0px;
+}
+
+/* 상단 메뉴 */
+#header {
+	background-color: #F2F2F2;
+	height: 300px;
+	float: left;
+}
+
+.container {
+	display: flex;
+	height: 100vh;
+}
+
+/* 중앙 내용 */
+#body {
+	width: 70%;
+	margin-left: 10px;
+	float: left;
+	background-color: #E3F2Fd;
+	/* height: 100vh; */
+}
+
+/* 왼쪽 메뉴 */
+#aside {
+	width: 20%;
+	float: left;
+	background-color: #A7FFEB;
+	/* height: 100vh; */
+}
+
+/* 하단 회사 정보 등 */
+#footer {
+	background-color: #FFF9C4;
+	height: 200px;
+	float: left;
+}
